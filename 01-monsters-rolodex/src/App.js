@@ -8,7 +8,11 @@ class App extends Component {
     super();
 
     this.state = {
-      userName: 'User name'
+      name: {
+        firstName: 'Jose',
+        lastName: 'Rodriguez'
+      },
+      company: 'Company name'
     }
   }
 
@@ -17,10 +21,23 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>Hi, { this.state.userName }</p>
+          <p>
+            Hi, { this.state.name.firstName }, { this.state.name.lastName } <br></br>
+            I work at { this.state.company }
+          </p>
           <button
             onClick={() => {
-              this.setState({userName: 'Will :D'})
+              // Set state could have 2 arguments. A function and a callback.
+              // To get a more sync behavior instead of async.
+              this.setState((state, props) => {
+                // Function
+                return {
+                  name: { firstName: 'UFirstName', lastName: 'ULastName' }
+                }
+              }, () => {
+                // Callback when function is done.
+                console.log(this.state);
+              });
             }}
           >
             Change name
