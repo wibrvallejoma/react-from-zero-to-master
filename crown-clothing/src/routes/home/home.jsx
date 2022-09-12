@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Directory from '../../components/directory/directory.component';
@@ -32,10 +33,10 @@ const Home = () => {
   ];
 
   return (
-    <div>
+    <Fragment>
       <Directory categories={categories} />
       <Outlet />
-    </div>
+    </Fragment>
   );
 };
 
