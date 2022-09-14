@@ -3,6 +3,8 @@ import {
   createUserDocFromAuth
 } from '../../services/firebase/firebase.service';
 
+import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
+
 const Login = () => {
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
@@ -13,6 +15,7 @@ const Login = () => {
     <div>
       <h1>Login</h1>
       <button onClick={logGoogleUser}>Sign in With Google PopUp</button>
+      <SignUpForm />
     </div>
   );
 };
