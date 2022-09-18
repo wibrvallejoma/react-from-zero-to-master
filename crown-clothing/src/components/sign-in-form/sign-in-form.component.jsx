@@ -36,9 +36,13 @@ const SignInForm = () => {
       console.log(response);
       resetFormFields();
     } catch (error) {
-      
+      // Generalize errors, more secured.
+      if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
+        alert("Incorrect email or password.");
+      } else {
+        console.log(error);
+      }
     }
-    
   };
 
   // Handles change for each input
