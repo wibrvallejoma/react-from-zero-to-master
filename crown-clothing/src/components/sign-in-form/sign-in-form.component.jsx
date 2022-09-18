@@ -3,7 +3,6 @@ import { useState } from 'react';
 // Services
 import {
   signInWithGooglePopup,
-  createUserDocFromAuth,
   signInAuthUserWithEmailAndPassword
 } from '../../services/firebase/firebase.service';
 
@@ -52,8 +51,7 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   return (
