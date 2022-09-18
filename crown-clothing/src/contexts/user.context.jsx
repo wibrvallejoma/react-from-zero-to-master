@@ -6,7 +6,7 @@ import {
 } from "../services/firebase/firebase.service";
 
 export const UserContext = createContext({
-  currentuser: null,
+  currentUser: null,
   setCurrentUser: () => null,
 });
 
