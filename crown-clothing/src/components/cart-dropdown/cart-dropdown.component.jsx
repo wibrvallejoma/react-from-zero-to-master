@@ -9,7 +9,7 @@ import CartItem from '../cart-item/cart-item.component';
 import './cart-dropdown.styles.scss';
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cartTotal } = useContext(CartContext);
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
@@ -23,6 +23,7 @@ const CartDropdown = () => {
           <CartItem cartItem={item} />
         ))}
       </div>
+      <span className='total'>Total: ${cartTotal}</span>
       <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
     </div>
   )
